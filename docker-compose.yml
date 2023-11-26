@@ -2,18 +2,7 @@ version: '3'
 services:
   web:
     build:
-      context: $PWD
-      dockerfile: Dockerfile.dev
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - $PWD:/app
-  tests:
-    build:
-      context: $PWD
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - $PWD:/app
-    command: ["npm", "run", "test"]
+      - '80:80'
